@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form action="#" class="sign-in-form">
+        <h2 class="title">Thank You for Registering</h2>
+        <br>
+        <div >
+          <img class='tickMark' src="../../assets/img/tickMark.png" alt="Hai">
+        </div>
+      <div class="formGroup" *ngIf="authService.userData as user">
+        <p class="text-center">We have sent a confirmation email to <br> <strong>{{user.email}}</strong>.</p>
+        <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+      </div>
+      <br>
+        <div>
+          <button
+            type="button"
+            class="btn solid"
+            (click)="authService.SendVerificationMail()"
+          >
+          <i class="fa fa-refresh" aria-hidden="true"></i>&nbsp;&nbsp;
+          Resend Verification Email
+          </button>
+          <p class="text-center">Go back <a [routerLink]="[ '/login']">Login?</a><p></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <img src="../../assets/img/conf.svg" class="image" alt="" />
+    </div>
+  </div>
+</div>
